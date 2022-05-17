@@ -1,0 +1,44 @@
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: antiquewhite;
+   padding-left:1em ;
+   padding-right: 2em;
+   padding-top: 0.2em;
+}
+
+button{
+    color: whitesmoke;
+    font-size: 1em;
+    
+}
+
+img{
+    width: 10em;
+    height: 5em;
+}
+
+#fst{
+    margin-left: 42em;
+}
+.header button {
+    font: inherit;
+    background-color: rgb(185, 160, 209);
+    border: 1px solid white;
+    color: white;
+    font-weight: bold;
+    padding: 0.5rem 1.5rem;
+    
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  
+  .header a:hover {
+    color: #dcc3ec;
+  }
+  
+  .header button:hover {
+    background-color: #2f1044;
+    color:whitesmoke;
+  }

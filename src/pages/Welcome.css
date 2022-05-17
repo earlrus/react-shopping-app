@@ -1,0 +1,31 @@
+.welcome-main{
+    text-align: center;
+}
+
+
+.welcome{
+    text-align: center;
+    font-size: 3em;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(238, 81, 81);
+    padding: 0 2em;
+    
+}
+
+.img-welcome{
+    width: 90em;
+    height: 40em;
+    opacity: 0.6;
+}
+
+button Link{
+    font-size: 1em;
+    text-decoration: none;
+    list-style: none;
+    background-color: blueviolet;
+    color:whitesmoke
+}
+
+button:hover{
+    background-color: aquamarine;
+}

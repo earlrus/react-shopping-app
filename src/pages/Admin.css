@@ -1,0 +1,21 @@
+.admin-main{
+    text-align: center;
+    
+}
+
+.admin{
+    display:flex;
+    justify-content: center;
+   
+    width: 20em;
+    height: 20em;
+    align-items:center ;
+    background-color: rgb(197, 159, 233);
+    margin-top: 3rem;
+    margin-left: 29rem;
+    border-radius: 1rem;
+}
+
+body{
+    background-color: rgb(37, 56, 63)
+}

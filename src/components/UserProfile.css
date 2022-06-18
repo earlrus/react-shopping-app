@@ -1,0 +1,33 @@
+body{
+    background-color: white;
+}
+
+table,th{
+    border: 1px solid black;
+border-collapse: collapse;
+text-align: center;
+}
+
+table{
+    margin-left: 5rem;
+    margin-top: 3rem;
+}
+
+table th{
+    font-weight: bolder;
+    color: rgb(70, 112, 148);
+    font-size: 2rem;
+}
+
+table td{
+    color: black;
+    font-size: 1.5rem;
+}
+
+th,td{
+    padding: 1rem;
+}
+
+table{
+    border-spacing: 0.4rem;
+}

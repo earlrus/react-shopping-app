@@ -1,0 +1,40 @@
+.main-register{
+
+    width: 100%;
+    height: 600px;
+    padding-top: 2em;
+    background-color: rgb(185, 228, 228);
+
+}
+
+.register-style{
+
+    width: 20em;
+    height: 16em;
+    text-align: center;
+    margin: 14em 32em;
+    border-radius: 0.5em;
+    background-color: whitesmoke;
+}
+
+input{
+    margin-top: 0.8em;
+    margin-left: 0.3em;
+}
+
+button{
+    margin-top: 1em;
+    font-size: 1em;
+    padding: 0.5em 1em;
+    color: whitesmoke;
+    background-color: rgb(83, 34, 129);
+    cursor: pointer;
+}
+
+button:hover{
+    background-color:rgb(109, 68, 148) ;
+}
+
+#fr{
+    margin-top: 2em;
+}

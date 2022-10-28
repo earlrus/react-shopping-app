@@ -1,8 +1,13 @@
+
 .details-main{
-    text-align: center;
-    width: 76em;
-    height:30em ;
+    
+    margin: 0 5rem;
+    width: 90%;
+    height:78vh;
     margin-top: 2em;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 2rem;
     
 }
 
@@ -12,14 +17,14 @@
     height: 29em;
     
     border-radius: 0.5em;
-    float: left;
+   
 
 }
 
 .details-img{
-    width: 35em;
-    height: 30em;
-    float: left;
+    width: 30em;
+    height: 26em;
+   
 border-radius: 0.5em;
 
 }
@@ -28,13 +33,14 @@ border-radius: 0.5em;
     
     width: 40em;
     height: 29em;
-    float: right;
+    
     text-align: center;
     
 }
 .details-heading{
     
     margin-left: 1em;
+    font-size: 3rem;
     margin-top: 0.3em;
     color: #ec8b6e;
     font-weight: bolder;
@@ -45,7 +51,7 @@ border-radius: 0.5em;
 
 .details-des{
    margin-top: 2em;
-   color: #ec8b6e;  
+   color: #F96666;  
    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 

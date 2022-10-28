@@ -1,8 +1,11 @@
-import './Product.css'
+
 import { useState } from 'react'
 import axios from 'axios'
 import { useHistory } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
+import styled from "styled-components";
+
+
 
 
 const Products=(props)=>{
@@ -41,22 +44,63 @@ history.push('/details')
     return(
 
 
-<div className='main-style'>
-<div className="products-style">
 
+
+<Flex>
 <img src={props.image} alt="products"/>
     <h1>{props.name}</h1>
     
     <p>Price:{props.price}</p>
     <button onClick={showDetails}>Show Details</button>
-</div>
+    </Flex>
 
 
 
 
-
-</div>
     )
 }
+
+
+
+
+const Flex=styled.div`
+display: flex;
+flex-direction: column;
+align-items: center;
+border-radius: 0.5rem;
+scale: 0.8;
+-webkit-box-shadow: 18px 11px 30px -8px rgba(105,82,105,1);
+-moz-box-shadow: 18px 11px 30px -8px rgba(105,82,105,1);
+box-shadow: 18px 11px 30px -8px rgba(105,82,105,1);
+width: 25rem;
+height:34rem;
+justify-content: center;
+gap:1rem;
+
+h1{
+    margin-top: 10px;
+}
+
+p{
+font-size: 1.2rem;
+letter-spacing: 0.2vh;
+}
+
+img{
+    border-radius: 0.2rem;
+    width: 20rem;
+    height: 15rem;
+}
+
+button{
+    font-size: 1.5rem;
+    padding:1rem 0.5rem;
+    margin-top: 2rem;
+    letter-spacing: 0.5vh;
+    border-radius: 0.2rem;
+    font-family: 'Creepster', cursive;
+}
+
+`;
 
 export default Products

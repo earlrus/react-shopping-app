@@ -6,6 +6,7 @@ import './Home.css'
 import { useHistory } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 
+
 const Home=()=>{
 
     const name=useSelector(state=>state.name)
@@ -63,17 +64,23 @@ return prd.name===SName;
 
 <input id="search" placeholder="Enter your search" ref={searchName} />
 <button onClick={clickHandler}>Search</button>
-
 </div>
+
 {products.map((productItem)=> {
 
-return <Products 
+return (
+<div id="container">
+<Products 
 key={productItem.id}
 name={productItem.name}
 image={productItem.image}
 price={productItem.price} 
 description={productItem.description}
 />
+</div>
+
+
+);
 
 })}
 
@@ -81,5 +88,8 @@ description={productItem.description}
        
     );
 }
+
+
+
 
 export default Home

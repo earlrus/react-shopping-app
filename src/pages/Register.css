@@ -1,9 +1,10 @@
 .main-register{
 
     width: 100%;
-    height: 600px;
+    height: 78vh;
     padding-top: 2em;
-    background-color: rgb(185, 228, 228);
+    background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.2)),url(https://thumbs.dreamstime.com/b/supermarket-cart-loaded-cardboard-boxes-sales-goods-concept-trade-commerce-online-shopping-high-delivery-order-134531493.jpg);
+   
 
 }
 
@@ -12,7 +13,8 @@
     width: 20em;
     height: 16em;
     text-align: center;
-    margin: 14em 32em;
+    margin: 10rem 32em;
+    
     border-radius: 0.5em;
     background-color: whitesmoke;
 }

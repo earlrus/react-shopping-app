@@ -3,7 +3,8 @@
     width: 1335px;
     height: 600px;
     padding-top: 2em;
-    background-color: rgb(185, 228, 228);
+    background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.2)),url(https://thumbs.dreamstime.com/b/supermarket-cart-loaded-cardboard-boxes-sales-goods-concept-trade-commerce-online-shopping-high-delivery-order-134531493.jpg);
+
 
 }
 

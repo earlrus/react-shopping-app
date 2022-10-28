@@ -1,0 +1,58 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.welcome-main{
+    text-align: center;
+    background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.2)),url(https://images.unsplash.com/photo-1589810635657-232948472d98?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTR8fGdpcmxzJTIwc2hvcHBpbmd8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60);
+    background-size: cover;
+    background-position: center;
+    filter: brightness();
+    height: 76vh;
+    width: 100%;
+  margin:auto;
+  padding: 0;
+  box-sizing: border-box;
+position: relative;
+
+ 
+  .text-styling{
+   margin: 0;
+
+    h1{
+      font-size: 4rem;
+      font-weight: 600;
+      color: #FFFAE7;
+      
+      font-family: 'Creepster', cursive;
+    position: absolute;
+    left:36%;
+    top: 23%;
+    text-transform: uppercase;
+    letter-spacing: 2vh;
+    }
+  }
+
+  button{
+    position: absolute;
+    bottom: 10px;
+    text-align: center;
+    right: 40%;
+  }
+
+}
+
+
+
+button Link{
+    font-size: 1em;
+    text-decoration: none;
+    list-style: none;
+    background-color: blueviolet;
+    color:whitesmoke
+}
+
+button:hover{
+    background-color: aquamarine;
+}

@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import './MainNavigation.css'
+import './MainNavigation.scss'
 import { useHistory } from 'react-router-dom'
 
 const MainNavigation = () => {

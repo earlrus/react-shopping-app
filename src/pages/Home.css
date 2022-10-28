@@ -1,16 +1,21 @@
-div{
+.search-style{
     text-align: center;
+    width:100%;
 }
 
 #search{
     margin-right: 0.5em;
 }
 
-button{
-    margin:2em;
-    border-radius: 0.4em;
+#container{
+    display: inline-block;
+    position: relative;
+    left: 5rem;
 }
+
+
 
 input{
     font-size: 1em;
 }
+

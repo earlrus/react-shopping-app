@@ -1,40 +1,17 @@
-.main-logout{
-
-    width: 100%;
-    height: 600px;
-    padding-top: 2em;
-    background-color: rgb(185, 228, 228);
-
+.main-logout {
+  min-height: calc(100vh - 64px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f0f2f5;
+  padding: 2rem;
 }
 
-.logout-style{
-
-    width:20em;
-    height: 15em;
-    text-align: center;
-    margin: 14em 32em;
-    border-radius: 0.5em;
-    background-color: whitesmoke;
+.logout-btn {
+  background: #e17055 !important;
 }
 
-input{
-    margin-top: 0.5em;
-    margin-left: 0.3em;
-}
-
-button{
-    margin-top: 1em;
-    font-size: 1em;
-    padding: 0.5em 1em;
-    color: whitesmoke;
-    background-color: rgb(83, 34, 129);
-    cursor: pointer;
-}
-
-button:hover{
-    background-color:rgb(109, 68, 148) ;
-}
-
-#fr{
-    margin-top: 2em;
+.logout-btn:hover {
+  background: #d63031 !important;
+  box-shadow: 0 4px 12px rgba(214, 48, 49, 0.3) !important;
 }

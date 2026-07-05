@@ -1,59 +1,153 @@
-.details-main{
-    text-align: center;
-    width: 75em;
-    height:30em ;
-    margin-top: 2em;
-    
+.details-main {
+  min-height: calc(100vh - 64px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f0f2f5;
+  padding: 2rem;
 }
 
-.details-one{
-    
-    width: 36em;
-    height: 29em;
-    
-    border-radius: 0.5em;
-    float: left;
-
+.details-card {
+  display: flex;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+  max-width: 860px;
+  width: 100%;
+  overflow: hidden;
+  border: 1px solid #eee;
 }
 
-.details-img{
-    width: 36em;
-    height: 30em;
-    float: left;
-border-radius: 0.5em;
-
+.details-image-wrapper {
+  flex: 1;
+  min-height: 380px;
+  overflow: hidden;
 }
 
-.details-two{
-    
-    width: 36em;
-    height: 29em;
-    float: right;
-    text-align: center;
-    
-}
-.details-heading{
-    
-    margin-left: 1em;
-    margin-top: 0.3em;
-    color: #ec8b6e;
-    font-weight: bolder;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+.details-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
 }
 
-
-
-.details-des{
-
-   margin-top: 2em;
-   color: #ec8b6e;  
-   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+.details-image-wrapper:hover .details-img {
+  transform: scale(1.05);
 }
 
-.details-para{
- font-size: 1.5em;   
-    margin-top: 2em;
-    font-weight: bolder;
-color: #333644;;
+.details-content {
+  flex: 1;
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
+.details-heading {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #2d3436;
+  margin: 0 0 0.75rem;
+  font-family: "Inter", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  letter-spacing: -0.3px;
+  text-align: left;
+}
+
+.details-description {
+  font-size: 0.95rem;
+  color: #636e72;
+  line-height: 1.7;
+  margin: 0 0 1.5rem;
+  text-align: left;
+}
+
+.details-price-section {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.details-price-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #b2bec3;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.details-price-value {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #0984e3;
+}
+
+.details-back-btn {
+  display: inline-block;
+  font: inherit;
+  background: #f0f2f5;
+  border: 1px solid #dfe6e9;
+  color: #2d3436;
+  font-weight: 600;
+  padding: 0.7rem 1.5rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 0.9rem;
+  border-radius: 8px;
+  text-decoration: none;
+  text-align: center;
+}
+
+.details-back-btn:hover {
+  background: #dfe6e9;
+}
+
+.details-notfound {
+  min-height: calc(100vh - 64px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #f0f2f5;
+  gap: 1rem;
+}
+
+.details-notfound h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #636e72;
+}
+
+.details-notfound a {
+  color: #0984e3;
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+}
+
+.details-notfound a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .details-card {
+    flex-direction: column;
+  }
+
+  .details-image-wrapper {
+    min-height: 240px;
+  }
+
+  .details-content {
+    padding: 1.5rem;
+  }
+
+  .details-heading {
+    font-size: 1.3rem;
+  }
+
+  .details-price-value {
+    font-size: 1.5rem;
+  }
+}

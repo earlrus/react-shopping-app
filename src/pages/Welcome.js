@@ -1,27 +1,39 @@
 import "./Welcome.css";
-import { useHistory } from "react-router-dom";
+import { useHistory, Link } from "react-router-dom";
 
-//hello
-
-const Home = () => {
+const Welcome = () => {
   const history = useHistory();
 
   const welcomeHandler = () => {
     history.replace("/home");
   };
+
   return (
     <section className="welcome-main">
-      <div>
-        <h1 className="welcome">Welcome</h1>
-        <img
-          className="img-welcome"
-          src="https://www.addictioncenter.com/app/uploads/2020/01/online_shopping_addiction-scaled.jpeg"
-          alt="Shop"
-        />
+      <div className="welcome-card anim-bounce-in">
+        <h1 className="welcome-heading">Welcome to Smart Shoppe</h1>
+        <p className="welcome-tagline">
+          Discover amazing products at unbeatable prices
+        </p>
+        <div className="welcome-image-wrapper">
+          <img
+            className="welcome-image"
+            src="https://www.addictioncenter.com/app/uploads/2020/01/online_shopping_addiction-scaled.jpeg"
+            alt="Shopping"
+          />
+        </div>
+        <button
+          className="welcome-btn anim-fade-in anim-delay-3"
+          onClick={welcomeHandler}
+        >
+          🛒 Start Shopping Now
+        </button>
+        <p className="welcome-footer anim-fade-in anim-delay-4">
+          <Link to="/home">Browse products</Link>
+        </p>
       </div>
-      <button onClick={welcomeHandler}>Start Your Shopping Today</button>
     </section>
   );
 };
 
-export default Home;
+export default Welcome;

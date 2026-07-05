@@ -1,62 +1,51 @@
-import './Product.css'
-import { useState } from 'react'
-import axios from 'axios'
-import { useHistory } from 'react-router-dom'
-import { useDispatch, useSelector } from 'react-redux'
+import "./Product.css";
+import axios from "axios";
+import { useHistory } from "react-router-dom";
+import { useDispatch } from "react-redux";
 
+const Products = (props) => {
+  const history = useHistory();
+  const dispatch = useDispatch();
 
-const Products=(props)=>{
-const [products,setProduct]=useState();
+  const showDetails = async () => {
+    try {
+      const res = await axios.get("/api/course");
+      const products = res.data;
+      const details = products.find((prd) => prd.name === props.name);
+      if (!details) return;
 
-const name=useSelector(state=>state.name)
-const image=useSelector(state=>state.image)
-const description=useSelector(state=>state.description)
-const price=useSelector(state=>state.price)
-const history=useHistory();
+      dispatch({
+        type: "SET_PRODUCT",
+        payload: {
+          name: details.name,
+          image: details.image,
+          description: details.description,
+          price: details.price,
+        },
+      });
 
-const dispatch=useDispatch();
-
-    const showDetails=async ()=>{
-
-        try {
-const res=await axios.get("https://course-api.com/react-store-products")
-     setProduct(res.data)
-const details=products.find((prd)=>{
-    return prd.name===props.name
-})
-
-dispatch({type:'name',value:details.name})
-dispatch({type:'image',value:details.image})
-dispatch({type:'description',value:details.description})
-dispatch({type:'price',value:details.price})
-
-console.log(name,image,description,price);
-
-history.push('/details')
-        } catch (error) {
-            console.log(error);
-        }
+      history.push("/details");
+    } catch (error) {
+      console.error(error);
     }
+  };
 
-    return(
+  return (
+    <div className="main-style anim-fade-in-up">
+      <div className="products-style hover-lift">
+        <div className="product-image-wrapper">
+          <img src={props.image} alt={props.name} />
+        </div>
+        <div className="product-info">
+          <h2 className="product-name">{props.name}</h2>
+          <p className="product-price">${props.price}</p>
+          <button className="product-btn" onClick={showDetails}>
+            Show Details
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+};
 
-
-<div className='main-style'>
-<div className="products-style">
-
-<img src={props.image} alt="products"/>
-    <h1>{props.name}</h1>
-    
-    <p>Price:{props.price}</p>
-    <button onClick={showDetails}>Show Details</button>
-</div>
-
-
-
-
-
-</div>
-    )
-}
-
-export default Products
+export default Products;

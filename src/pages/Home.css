@@ -1,16 +1,111 @@
-div{
-    text-align: center;
+.home-header {
+  background: #fff;
+  padding: 1.5rem 2rem;
+  border-bottom: 1px solid #e0e0e0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+  text-align: center;
 }
 
-#search{
-    margin-right: o.5em;
+.home-title {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #2d3436;
+  margin: 0 0 1rem;
+  text-align: center;
+  letter-spacing: -0.3px;
 }
 
-button{
-    margin:2em;
-    border-radius: 0.4em;
+.search-bar {
+  display: flex;
+  max-width: 480px;
+  margin: 0 auto;
+  justify-content: center;
+  gap: 0;
 }
 
-input{
-    font-size: 1em;
+.search-bar input {
+  flex: 1;
+  padding: 0.7rem 1rem;
+  border: 2px solid #dfe6e9;
+  border-right: none;
+  border-radius: 8px 0 0 8px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  background: #fff;
+  transition: all 0.2s ease;
+  margin: 0;
+  outline: none;
+}
+
+.search-bar input:focus {
+  border-color: #74b9ff;
+}
+
+.search-bar input::placeholder {
+  color: #b2bec3;
+  font-weight: 400;
+}
+
+.search-btn {
+  font: inherit;
+  background: #0984e3;
+  border: 2px solid #0984e3;
+  color: #fff;
+  font-weight: 600;
+  padding: 0.7rem 1.25rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 0.95rem;
+  border-radius: 0 8px 8px 0;
+  margin: 0;
+}
+
+.search-btn:hover {
+  background: #0773c5;
+  border-color: #0773c5;
+}
+
+.search-error {
+  color: #d63031;
+  font-size: 0.85rem;
+  margin: 0.75rem auto 0;
+  max-width: 480px;
+  text-align: center;
+  background: #ffeaa7;
+  padding: 0.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+.products-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 2rem;
+  gap: 0;
+  background: #f0f2f5;
+  min-height: calc(100vh - 200px);
+}
+
+@media (max-width: 768px) {
+  .home-header {
+    padding: 1rem;
+  }
+
+  .home-title {
+    font-size: 1.1rem;
+  }
+
+  .search-bar {
+    flex-direction: row;
+  }
+
+  .search-btn {
+    white-space: nowrap;
+  }
+
+  .products-grid {
+    padding: 1rem 0.5rem;
+  }
 }

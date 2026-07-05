@@ -1,20 +1,93 @@
-
-
-
-.products-style{
-    width: 30em;
-    height: 18em;
-    
-    border-radius: 0.5em;
-    float: left;
-    margin-left: 2em;
-    text-align: center;
-    margin-top: 1em;
+.main-style {
+  display: inline-block;
+  padding: 0.75rem;
 }
 
-img{
-    width: 40em;
-    height: 20em;
-    margin-top: 0.2em;
-    border-radius: 0.4em;
+.products-style {
+  width: 260px;
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: all 0.25s ease;
+  border: 1px solid #eee;
+}
+
+.product-image-wrapper {
+  width: 100%;
+  height: 180px;
+  overflow: hidden;
+}
+
+.product-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+  border-radius: 0;
+}
+
+.products-style:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.products-style:hover .product-image-wrapper img {
+  transform: scale(1.08);
+}
+
+.product-info {
+  padding: 0.875rem 1rem 1rem;
+}
+
+.product-name {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #2d3436;
+  margin: 0 0 0.35rem;
+  text-align: left;
+  font-family: "Inter", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  letter-spacing: -0.2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.product-price {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #0984e3;
+  margin: 0 0 0.75rem;
+  text-align: left;
+}
+
+.product-btn {
+  font: inherit;
+  background: #0984e3;
+  border: none;
+  color: #fff;
+  font-weight: 600;
+  padding: 0.55rem 1.25rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  width: 100%;
+  font-size: 0.875rem;
+  border-radius: 8px;
+  margin: 0;
+}
+
+.product-btn:hover {
+  background: #0773c5;
+  box-shadow: 0 4px 12px rgba(9, 132, 227, 0.3);
+}
+
+@media (max-width: 768px) {
+  .main-style {
+    padding: 0.5rem;
+  }
+
+  .products-style {
+    width: 100%;
+    max-width: 280px;
+  }
 }

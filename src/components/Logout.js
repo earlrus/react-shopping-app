@@ -1,71 +1,63 @@
-
-import './Logout.css'
-import axios from 'axios'
-import { useDispatch, useSelector } from 'react-redux'
-import { useState } from 'react'
-
+import "./Logout.css";
+import axios from "axios";
+import { useDispatch, useSelector } from "react-redux";
+import { useState } from "react";
+import { useHistory, Link } from "react-router-dom";
 
 const Logout = () => {
+  const token = useSelector((state) => state.token);
+  const dispatch = useDispatch();
+  const history = useHistory();
+  const [isLogout, setIsLogout] = useState(null);
+  const [error, setError] = useState("");
 
-    let token=useSelector(state=>state.token)
-    let isLogin=useSelector(state=>state.isLogin)
+  const accessToken = `${token}`;
 
-const [isLogout,setIsLogout]=useState(null)
+  const logoutHandler = async (e) => {
+    e.preventDefault();
+    setError("");
 
-const dispatch=useDispatch();
+    try {
+      await axios.post("/api/auth/users/logout", null, {
+        headers: { Authorization: `Bearer ${accessToken}` },
+      });
+      dispatch({ type: "LOGOUT" });
+      setIsLogout(true);
 
-    const accessToken=`${token}`
-
-    const apiUrl="https://user-authentication-aman.herokuapp.com"
-    
-    const authAxios=axios.create({
-        baseURL:apiUrl,
-        headers:{
-            Authorization:`Bearer ${accessToken}`
-        }
-    })
-    
-        const logoutHandler=async (e)=>{
-            e.preventDefault();
-        
-            
-        
-            try {
-                const res=await authAxios.post(`${apiUrl}/users/logout`)
-                console.log(res);
-
-                
-                dispatch({type:'IN',value:false})
-
-                setIsLogout(true)
-                console.log(isLogin);
-        
-            } catch (error) {
-                console.log(error);
-                setIsLogout(false)
-                dispatch({type:'IN',value:true})
-            }
-        }
-        
-
-
+      setTimeout(() => {
+        history.replace("/login");
+      }, 2000);
+    } catch (err) {
+      setError(err.response?.data?.message || "Logout failed");
+      setIsLogout(false);
+    }
+  };
 
   return (
-    <div className='main-logout'>
-     <div className='logout-style'>
-     <form onSubmit={logoutHandler}>
-                
-                
-              
-               <button>Logout</button> 
-              {isLogout && <p>Successfully Logout</p>}
-               
-<br/>
-               
- </form>
-     </div>
+    <div className="main-logout">
+      <div className="auth-card anim-scale-in">
+        <h2 className="auth-title">Logout</h2>
+        <p className="auth-subtitle">Are you sure you want to sign out?</p>
+        <form onSubmit={logoutHandler}>
+          {error && <p className="error-message anim-fade-in">{error}</p>}
+          {isLogout && (
+            <p className="success-message anim-bounce-in">
+              ✓ Successfully Logged Out!
+            </p>
+          )}
+          <button
+            type="submit"
+            className="auth-btn logout-btn anim-fade-in anim-delay-1 hover-pulse"
+          >
+            Sign Out
+          </button>
+        </form>
+        <p className="auth-footer anim-fade-in anim-delay-2">
+          Changed your mind? <Link to="/welcome">Back to Shopping</Link>
+        </p>
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default Logout
+export default Logout;

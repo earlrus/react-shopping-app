@@ -1,31 +1,109 @@
-.welcome-main{
-    text-align: center;
+.welcome-main {
+  min-height: calc(100vh - 64px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
 }
 
-
-.welcome{
-    text-align: center;
-    font-size: 3em;
-    font-family: Arial, Helvetica, sans-serif;
-    color: rgb(238, 81, 81);
-    padding: 0 2em;
-    
+.welcome-card {
+  text-align: center;
+  background: #fff;
+  padding: 2.5rem 3rem;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+  max-width: 520px;
+  width: 100%;
+  z-index: 1;
+  position: relative;
 }
 
-.img-welcome{
-    width: 90em;
-    height: 40em;
-    opacity: 0.6;
+.welcome-heading {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #2d3436;
+  margin: 0 0 0.5rem;
+  font-family: "Inter", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  letter-spacing: -0.5px;
+  line-height: 1.2;
 }
 
-button Link{
-    font-size: 1em;
-    text-decoration: none;
-    list-style: none;
-    background-color: blueviolet;
-    color:whitesmoke
+.welcome-tagline {
+  font-size: 1rem;
+  color: #636e72;
+  margin: 0 0 1.5rem;
 }
 
-button:hover{
-    background-color: aquamarine;
+.welcome-image-wrapper {
+  width: 100%;
+  height: 220px;
+  overflow: hidden;
+  border-radius: 12px;
+  margin-bottom: 1.5rem;
+}
+
+.welcome-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.welcome-image-wrapper:hover .welcome-image {
+  transform: scale(1.08);
+}
+
+.welcome-btn {
+  font: inherit;
+  background: #6c5ce7;
+  border: none;
+  color: #fff;
+  font-weight: 600;
+  padding: 0.9rem 2rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 1rem;
+  border-radius: 8px;
+  margin-bottom: 0.5rem;
+  width: 100%;
+  letter-spacing: 0.3px;
+}
+
+.welcome-btn:hover {
+  background: #5a4bd1;
+  box-shadow: 0 4px 16px rgba(108, 92, 231, 0.35);
+  transform: translateY(-1px);
+}
+
+.welcome-footer {
+  margin: 0.75rem 0 0;
+}
+
+.welcome-footer a {
+  color: #636e72;
+  font-weight: 500;
+  font-size: 0.85rem;
+  transition: color 0.2s ease;
+}
+
+.welcome-footer a:hover {
+  color: #6c5ce7;
+}
+
+@media (max-width: 768px) {
+  .welcome-card {
+    padding: 1.5rem;
+  }
+
+  .welcome-heading {
+    font-size: 1.5rem;
+  }
+
+  .welcome-image-wrapper {
+    height: 180px;
+  }
 }

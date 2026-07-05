@@ -1,86 +1,50 @@
-
 import { createStore } from "redux";
 
+const initialState = {
+  isLogin: false,
+  token: "",
+  name: "",
+  image: "",
+  description: "",
+  price: "",
+};
 
-const authReducer=(state={isLogin:false,token:'',name:'',image:'',description:'',price:''},action)=>{
+const authReducer = (state = initialState, action) => {
+  switch (action.type) {
+    case "IN":
+      return { ...state, isLogin: action.value };
+    case "update_token":
+      return { ...state, token: action.value };
+    case "SET_PRODUCT":
+      return {
+        ...state,
+        name: action.payload.name || state.name,
+        image: action.payload.image || state.image,
+        description: action.payload.description || state.description,
+        price: action.payload.price || state.price,
+      };
+    case "name":
+      return { ...state, name: action.value };
+    case "image":
+      return { ...state, image: action.value };
+    case "description":
+      return { ...state, description: action.value };
+    case "price":
+      return { ...state, price: action.value };
+    case "LOGOUT":
+      return {
+        isLogin: false,
+        token: "",
+        name: "",
+        image: "",
+        description: "",
+        price: "",
+      };
+    default:
+      return state;
+  }
+};
 
-if(action.type==='IN'){
-
-    return {
-        isLogin:action.value,
-        token:state.token,
-        name:state.name,
-        image:state.image,
-        description:state.description,
-        price:state.price
-    }
-}
-
-
-if(action.type==='update_token'){
-    return {
-        isLogin:state.isLogin,
-        token:action.value,
-        name:state.name,
-        image:state.image,
-        description:state.description,
-        price:state.price
-    }
-}
-
-if(action.type==='name'){
-    return {
-        isLogin:state.isLogin,
-        token:state.token,
-        name:action.value,
-        image:state.image,
-        description:state.description,
-        price:state.price
-
-    }
-}
-
-
-if(action.type==='image'){
-    return {
-        isLogin:state.isLogin,
-        token:state.token,
-        name:state.name,
-        image:action.value,
-        description:state.description,
-        price:state.price
-
-    }
-}
-
-
-if(action.type==='description'){
-    return {
-        isLogin:state.isLogin,
-        token:state.token,
-        name:state.name,
-        image:state.image,
-        description:action.value,
-        price:state.price
-
-    }
-}
-
-if(action.type==='price'){
-    return {
-        isLogin:state.isLogin,
-        token:state.token,
-        name:state.name,
-        image:state.image,
-        description:state.description,
-        price:action.value
-
-    }
-}
-
-return state
-}
-
-const store=createStore(authReducer);
+const store = createStore(authReducer);
 
 export default store;

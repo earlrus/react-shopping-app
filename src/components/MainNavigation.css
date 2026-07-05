@@ -1,44 +1,80 @@
-.header{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: antiquewhite;
-   padding-left:1em ;
-   padding-right: 2em;
-   padding-top: 0.2em;
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #2d3436;
+  padding: 0 2rem;
+  height: 64px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
-button{
-    color: whitesmoke;
-    font-size: 1em;
-    
+.header-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  animation: slideDown 0.5s ease-out;
 }
 
-img{
-    width: 10em;
-    height: 5em;
+.header-logo img {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 8px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
 }
 
-#fst{
-    margin-left: 42em;
+.header-logo img:hover {
+  transform: scale(1.05);
 }
-.header button {
-    font: inherit;
-    background-color: rgb(185, 160, 209);
-    border: 1px solid white;
-    color: white;
-    font-weight: bold;
-    padding: 0.5rem 1.5rem;
-    
-    border-radius: 6px;
-    cursor: pointer;
+
+.header-logo h1 {
+  color: #fff;
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin: 0;
+  font-family: "Inter", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  letter-spacing: -0.5px;
+}
+
+.header-actions {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.nav-link {
+  font: inherit;
+  background-color: #636e72;
+  color: #fff;
+  font-weight: 600;
+  padding: 0.5rem 1.25rem;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  font-size: 0.875rem;
+  border-radius: 8px;
+  letter-spacing: 0.3px;
+}
+
+.nav-link:hover {
+  background-color: #b2bec3;
+  color: #2d3436;
+}
+
+@media (max-width: 768px) {
+  .header {
+    padding: 0 1rem;
   }
-  
-  .header a:hover {
-    color: #dcc3ec;
+
+  .header-logo h1 {
+    font-size: 1rem;
   }
-  
-  .header button:hover {
-    background-color: #2f1044;
-    color:whitesmoke;
+
+  .nav-link {
+    padding: 0.4rem 0.9rem;
+    font-size: 0.8rem;
   }
+}
